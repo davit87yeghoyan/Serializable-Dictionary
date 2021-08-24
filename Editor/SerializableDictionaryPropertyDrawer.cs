@@ -306,7 +306,7 @@ namespace Serializable_Dictionary.Editor
                 if (builderMethod is { })
                 {
                     var index =int.Parse(keyProperty.propertyPath.Split('[').Last().Split(']').First());
-                    keyDisable = (bool)builderMethod.Invoke(null, new object[]{index});
+                    keyDisable = (bool)builderMethod.Invoke(null, new object[]{index,keyProperty.stringValue});
                 }
             }
 
