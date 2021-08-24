@@ -270,6 +270,11 @@ namespace Serializable_Dictionary.SerializableDictionary
 	{
 		public bool KeyDisable { get;}
 		public Type Type { get; }
+		
+		
+		/// <summary>
+		/// method params - methodName( int, string)
+		/// </summary>
 		public string MethodName { get; }
 
 
