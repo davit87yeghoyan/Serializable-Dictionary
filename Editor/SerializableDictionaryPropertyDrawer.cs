@@ -275,7 +275,7 @@ namespace Serializable_Dictionary.Editor
             EditorGUIUtility.labelWidth = keyPosition.width * labelWidthRelative;
 
 
-            var keyDisable = KeyDisable(keyProperty, setting, keyPosition, labelWidth);
+            var keyDisable = KeyDisable(keyProperty, setting, ref keyPosition, labelWidth);
             EditorGUI.BeginDisabledGroup(keyDisable);
             EditorGUI.PropertyField(keyPosition, keyProperty, TempContent(keyLabel), true);
             EditorGUI.EndDisabledGroup();
@@ -294,7 +294,7 @@ namespace Serializable_Dictionary.Editor
             return Mathf.Max(keyPropertyHeight, valuePropertyHeight);
         }
 
-        private static bool KeyDisable(SerializedProperty keyProperty,  SerializableDictionaryDrawerSettingAttribute setting, Rect keyPosition, float labelWidth)
+        private static bool KeyDisable(SerializedProperty keyProperty,  SerializableDictionaryDrawerSettingAttribute setting, ref Rect keyPosition, float labelWidth)
         {
             bool keyDisable = setting?.KeyDisable ?? false;
             string staticMethodName = setting?.MethodName ?? null;
@@ -339,7 +339,7 @@ namespace Serializable_Dictionary.Editor
             keyPosition.height = keyPropertyHeight;
             keyPosition.width = labelWidth - IndentWidth;
             
-            var keyDisable = KeyDisable(keyProperty, setting, keyPosition, labelWidth);
+            var keyDisable = KeyDisable(keyProperty, setting, ref keyPosition, labelWidth);
             EditorGUI.BeginDisabledGroup(keyDisable);
             EditorGUI.PropertyField(keyPosition, keyProperty, GUIContent.none, true);
             EditorGUI.EndDisabledGroup();
