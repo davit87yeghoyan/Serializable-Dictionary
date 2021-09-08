@@ -273,7 +273,7 @@ namespace Serializable_Dictionary.SerializableDictionary
 		
 		
 		/// <summary>
-		/// method params - methodName( int, string)
+		/// method params - bool methodName( int, string)
 		/// </summary>
 		public string MethodName { get; }
 
