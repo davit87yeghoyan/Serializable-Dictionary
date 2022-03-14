@@ -25,8 +25,7 @@ namespace Serializable_Dictionary.Editor
         static GUIContent s_warningIconNull = IconContent("console.warnicon.sml", "Null key, this entry will be lost");
         static GUIStyle s_buttonStyle = GUIStyle.none;
         static GUIContent s_tempContent = new GUIContent();
-
-
+        
         class ConflictState
         {
             public object conflictKey = null;
