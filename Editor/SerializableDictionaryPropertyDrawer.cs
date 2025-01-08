@@ -316,7 +316,7 @@ namespace Serializable_Dictionary.Editor
                 if (GUI.Button(keyPosition, "Copy"))
                 {
                     TextEditor te = new TextEditor();
-                    te.content = new GUIContent(keyProperty.stringValue);
+                    te.text = keyProperty.stringValue;
                     te.SelectAll();
                     te.Copy();
                 }
