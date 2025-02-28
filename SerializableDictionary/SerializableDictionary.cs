@@ -115,6 +115,11 @@ namespace Serializable_Dictionary.SerializableDictionary
 			return ((IDictionary<TKey, TValue>)m_dict).TryGetValue(key, out value);
 		}
 
+  		public TValue GetValueOrDefault(TKey key, TValue defaultValue = default)
+		{
+    			return TryGetValue(key, out var value) ? value : defaultValue;
+		}
+
 		public void Add(KeyValuePair<TKey, TValue> item)
 		{
 			((IDictionary<TKey, TValue>)m_dict).Add(item);
